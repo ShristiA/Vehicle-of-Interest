@@ -4,6 +4,7 @@
  */
 package vehiclesofinterestdesktop;
 
+
 import java.awt.Color;
 import static java.awt.Color.HSBtoRGB;
 import java.awt.Component;
