@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <h:panelGroup class="div">
+        <br />
+        <h:graphicImage name="images/logo.PNG"/>
+        <br />
+        <br />
+        <br />
+        <h:link outcome="/reasonForInterest/List" value="Reason For Interest"/>
+        <br />
+        <h:link outcome="/vehicleMake/List" value="Vehicle Make"/>
+        <br />
+        <h:link outcome="/vehicleModel/List" value=" Vehicle Model"/>
+        <br />
+        <h:link outcome="/vehicleOfInterest/List" value="Vehicle Of Interests"/>
+        <br />
+        </h:panelGroup>
+        <h:form styleClass="jsfcrud_list_form">
+         <h:outputText escape="false" value="#{bundle.ListReasonForInterestEmpty}" rendered="#{reasonForInterestController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{reasonForInterestController.items.rowCount > 0}">
+                    <h:outputText  styleClass= "page" value="#{reasonForInterestController.pagination.pageFirstItem + 1}..#{reasonForInterestController.pagination.pageLastItem + 1}/#{reasonForInterestController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink  styleClass= "page" action="#{reasonForInterestController.previous}" value="#{bundle.Previous} #{reasonForInterestController.pagination.pageSize}" rendered="#{reasonForInterestController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink  styleClass= "page" action="#{reasonForInterestController.next}" value="#{bundle.Next} #{reasonForInterestController.pagination.pageSize}" rendered="#{reasonForInterestController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable  value="#{reasonForInterestController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReasonForInterestTitle_reason}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.reason}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListReasonForInterestTitle_description}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.description}"/>
+                        </h:column>
+<!--                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="{reasonForInterestController.prepareView}" value="{bundle.ListReasonForInterestViewLink}"/>
+                           <h:outputText value=" "/>
+                        </h:column>-->
+                    </h:dataTable>
+                </h:panelGroup>
+            </h:form>
+         <br />
+    </h:body>
+
+
+
+
+</html>
+

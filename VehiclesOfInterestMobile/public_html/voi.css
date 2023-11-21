@@ -1,0 +1,92 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Nov 5, 2023, 8:43:10 PM
+    Author     : Shristi Amatya
+*/
+#VOITable, #VOIMakeTable, #VOIModelTable, #VOIROITable{
+display : none;
+}
+
+table, tr,td{
+    border: 1px solid #e3e3e4; 
+    padding: 4px 2px;
+}
+table{
+    border-collapse: collapse;
+    text-align: center;
+    font-family: tahoma;
+    font-size: 16px;
+   width:80vh;
+}
+
+
+#header{
+ background-color: maroon;
+ color:#fdbf38;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fdbf38;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+
+}
+button{
+background-color: #fdbf38;
+border: 1px solid #fdbf38;
+color: maroon;
+}
+.sidebar button {
+  padding: 8px 8px ;
+  text-decoration: none;
+  color: maroon;
+  display: block;
+  transition: 0.3s;
+      font-size: 25px;
+}
+
+.sidebar a:hover {
+  color: magenta;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: maroon;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fdbf38;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 320px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}

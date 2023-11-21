@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Vehicles of Interest</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="voi.css"/>
+        <script src="vehiclesOfInterest.js"></script>
+    </head>
+    <body>
+       
+        
+        <div id="main">
+  <button class="openbtn" onclick="openNav()">☰</button>
+        <div id="VehiclesOfInterestdiv">
+           <table id="VOITable" border="1">
+              <tr id="header">
+                 <td>License Plate</td>
+                <td>Reason</td>
+                <td>Make</td>
+                <td>Model</td>
+                <td>Year</td>
+                <td>Color</td>
+                <td>Owner Name</td>
+                <td>Owner Phone</td>
+              </tr>
+           </table>
+        </div>
+          
+        <div id="VehicleMakediv">
+           <table id="VOIMakeTable" border="1">
+              <tr id="header">
+                 <td>Make</td>
+              </tr>
+           </table>
+        </div>
+             
+        <div id="VehicleModeldiv">
+           <table id="VOIModelTable" border="1">
+              <tr id="header">
+                 <td>Make</td>
+                 <td>Model</td>
+              </tr>
+           </table>
+        </div>
+                    
+        <div id="VehicleROIdiv">
+           <table id="VOIROITable" border="1">
+              <tr id="header"> 
+                <td>Description</td>
+                 <td>Reason</td>
+
+              </tr>
+           </table>
+        </div>
+            </div>
+         <div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+   <button class="btn" onclick="refreshVOI()">Vehicle of Interest</button>
+         <button class="btn" onclick="refreshMake()">Vehicle Make</button>
+         <button class="btn" onclick="refreshModel()">Vehicle Model</button>
+         <button class="btn" onclick="refreshROI()">Reason Of Interest</button>
+
+</div>
+       <script>
+           var voi = document.getElementById('VOITable');
+           var make = document.getElementById('VOIMakeTable');
+           var model = document.getElementById('VOIModelTable');
+           var roi = document.getElementById('VOIROITable');
+           var sidebar = document.getElementById('mySidebar');
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+
+  }
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+function updateFontSize() {
+      const content = document.getElementsByClassName('btn');
+      const screenWidth = window.innerWidth;
+      console.log(content,screenWidth)
+      if (screenWidth < 600) {
+          for (let i = 0; i < content.length; i++) {
+            content[i].style.fontSize = '14px';
+          }
+           
+          voi.style.fontSize = '8px';
+          make.style.fontSize = '8px';
+          model.style.fontSize = '8px';
+          roi.style.fontSize = '8px';
+         sidebar.style.width = "100px";
+          document.getElementById("main").style.marginLeft= "90px";
+        }
+      } 
+    
+  
+    //updateFontSize();
+
+    window.addEventListener('resize', updateFontSize);
+</script>
+    </body>
+</html>
